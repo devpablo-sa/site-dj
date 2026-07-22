@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devpablo-sa.github.io/site-dj/sitemap.xml
