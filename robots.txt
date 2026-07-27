@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devpablo-sa.github.io/site-dj/sitemap.xml
+Sitemap: https://rpnsom.com.br/sitemap.xml
