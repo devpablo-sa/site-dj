@@ -1,0 +1,138 @@
+/*
+  RPN Som e Iluminações — Design Tokens
+  Extracted from index.html (2026-09-13). See design-system/README.md.
+  Three layers: PRIMITIVE (raw values) -> SEMANTIC (purpose, theme-switchable) -> COMPONENT.
+  The semantic layer's *output values* are identical to index.html's current :root —
+  this file can replace that block with zero visual change.
+*/
+
+/* ============================= PRIMITIVE ============================= */
+:root{
+  /* color */
+  --p-ink-950:#14111C; --p-ink-900:#1F1A2A; --p-ink-850:#1A1624;
+  --p-paper-50:#FAF6EF; --p-paper-100:#F1EADC;
+  --p-plum-900:#221D2C; --p-plum-950:#221605;
+  --p-neutral-200:#F3EEE6; --p-neutral-250:#B8AFC4; --p-neutral-400:#8A8098;
+  --p-neutral-500:#6B6277; --p-neutral-300:#E4DBC8; --p-neutral-800:#322B3D;
+  --p-amber-600:#C97F17; --p-amber-400:#E3A13A; --p-amber-300:#F0B457;
+  --p-magenta-700:#9A2C71; --p-magenta-500:#D6409F; --p-magenta-400:#E762B4;
+  --p-blue-500:#2F6FEA;
+
+  /* font family */
+  --p-font-display:'Bebas RPN', system-ui, sans-serif;
+  --p-font-body:'Manrope RPN', system-ui, sans-serif;
+  --p-font-mono:'Plex RPN', ui-monospace, monospace;
+
+  /* font size (consolidated from ad-hoc values in source — see README) */
+  --p-fs-3xs:.6rem; --p-fs-2xs:.7rem; --p-fs-xs:.75rem; --p-fs-sm:.8rem;
+  --p-fs-sm-md:.88rem; --p-fs-base-tight:.95rem; --p-fs-base:1rem;
+  --p-fs-md:1.1rem; --p-fs-lg:1.15rem; --p-fs-lg-xl:1.2rem; --p-fs-xl:1.3rem;
+  --p-fs-2xl:1.7rem;
+  --p-fs-display-sm:clamp(1.8rem,3.6vw,2.5rem);
+  --p-fs-display-md:clamp(1.9rem,4vw,2.7rem);
+  --p-fs-display-lg:clamp(2.6rem,6.4vw,4.6rem);
+
+  /* spacing (bespoke scale — the site is hand-tuned, not on a strict 4px grid) */
+  --p-space-1:.4rem; --p-space-2:.5rem; --p-space-3:.65rem; --p-space-4:.7rem;
+  --p-space-5:.75rem; --p-space-6:.8rem; --p-space-7:.85rem; --p-space-8:.9rem;
+  --p-space-9:1rem; --p-space-10:1.15rem; --p-space-11:1.25rem; --p-space-12:1.35rem;
+  --p-space-13:1.5rem; --p-space-14:1.6rem; --p-space-15:1.75rem; --p-space-16:2rem;
+  --p-space-17:2.25rem; --p-space-18:2.5rem; --p-space-19:3rem;
+
+  --p-layout-section-y:clamp(3rem,7vw,5rem);
+  --p-layout-hero-y-top:clamp(4rem,10vw,7rem);
+  --p-layout-hero-y-bottom:clamp(3.5rem,8vw,5.5rem);
+  --p-layout-intro-y-top:clamp(2rem,5vw,3rem);
+
+  /* radius */
+  --p-radius-sm:2px; --p-radius-md:3px; --p-radius-lg:4px; --p-radius-full:50%;
+}
+
+/* ============================= SEMANTIC =============================== */
+/* Light theme is the default — mirrors :root[data-theme="light"] today. */
+:root{
+  --ink:var(--p-ink-950); --ink-2:var(--p-ink-900); --ink-3:var(--p-ink-850);
+  --paper:var(--p-paper-50); --paper-2:var(--p-paper-100);
+  --text:var(--p-plum-900); --muted:var(--p-neutral-500); --border:var(--p-neutral-300);
+  --amber:var(--p-amber-600); --amber-fill:var(--p-amber-400);
+  --magenta:var(--p-magenta-700); --magenta-fill:var(--p-magenta-500);
+  --focus:var(--p-blue-500);
+  --on-ink:var(--p-neutral-200); --on-ink-muted:var(--p-neutral-250);
+  --on-ink-muted-2:var(--p-neutral-400); --on-ink-border:var(--p-neutral-800);
+  --on-amber:var(--p-plum-950);
+
+  --font-display:var(--p-font-display); --font-body:var(--p-font-body); --font-mono:var(--p-font-mono);
+
+  --fs-label:var(--p-fs-2xs); --fs-caption:var(--p-fs-xs); --fs-nav:var(--p-fs-sm);
+  --fs-button:var(--p-fs-sm-md); --fs-body-sm:var(--p-fs-base-tight); --fs-body:var(--p-fs-base);
+  --fs-heading-sm:var(--p-fs-md); --fs-heading-md:var(--p-fs-lg); --fs-brand:var(--p-fs-xl);
+  --fs-stat:var(--p-fs-2xl); --fs-heading-lg:var(--p-fs-display-sm);
+  --fs-heading-xl:var(--p-fs-display-md); --fs-heading-hero:var(--p-fs-display-lg);
+
+  --gap-xs:var(--p-space-1); --gap-sm:var(--p-space-5); --gap-md:var(--p-space-9); --gap-lg:var(--p-space-15);
+  --card-padding-x:var(--p-space-13); --card-padding-y:var(--p-space-14);
+  --panel-padding:var(--p-space-13); --section-y:var(--p-layout-section-y);
+
+  --radius-control:var(--p-radius-sm); --radius-surface:var(--p-radius-md);
+  --radius-panel:var(--p-radius-lg); --radius-marker:var(--p-radius-full);
+}
+
+/* Dark theme overrides — mirrors prefers-color-scheme:dark and [data-theme="dark"] today. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:var(--p-ink-950); --paper-2:var(--p-ink-900);
+    --text:var(--p-neutral-200); --muted:var(--p-neutral-250); --border:var(--p-neutral-800);
+    --amber:var(--p-amber-300); --amber-fill:var(--p-amber-300);
+    --magenta:var(--p-magenta-400); --magenta-fill:var(--p-magenta-400);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:var(--p-ink-950); --paper-2:var(--p-ink-900);
+  --text:var(--p-neutral-200); --muted:var(--p-neutral-250); --border:var(--p-neutral-800);
+  --amber:var(--p-amber-300); --amber-fill:var(--p-amber-300);
+  --magenta:var(--p-magenta-400); --magenta-fill:var(--p-magenta-400);
+}
+:root[data-theme="light"]{
+  --paper:var(--p-paper-50); --paper-2:var(--p-paper-100);
+  --text:var(--p-plum-900); --muted:var(--p-neutral-500); --border:var(--p-neutral-300);
+  --amber:var(--p-amber-600); --amber-fill:var(--p-amber-400);
+  --magenta:var(--p-magenta-700); --magenta-fill:var(--p-magenta-500);
+}
+
+/* ============================= COMPONENT =============================== */
+:root{
+  /* button */
+  --btn-font:var(--font-body); --btn-font-weight:700; --btn-font-size:var(--fs-button);
+  --btn-padding-x:1.15rem; --btn-padding-y:.65rem; --btn-radius:var(--radius-control);
+  --btn-amber-bg:var(--amber-fill); --btn-amber-fg:var(--on-amber);
+  --btn-ghost-fg:var(--on-ink); --btn-ghost-border:rgba(243,238,230,.4); --btn-ghost-border-hover:#F3EEE6;
+  --btn-line-fg:var(--text); --btn-line-border:var(--border); --btn-line-border-hover:var(--amber);
+
+  /* service card */
+  --card-bg:var(--paper-2); --card-border:var(--border); --card-radius:var(--radius-surface);
+  --card-icon-size:2.4rem; --card-icon-bg:var(--amber-fill); --card-icon-fg:var(--on-amber);
+  --card-heading-size:var(--fs-heading-sm); --card-body-size:var(--fs-body-sm); --card-body-color:var(--muted);
+
+  /* diff item (dark band) */
+  --diff-bg:var(--ink-3); --diff-eyebrow-color:var(--p-amber-300);
+  --diff-heading-color:var(--on-ink); --diff-body-color:var(--on-ink-muted);
+
+  /* timeline marker */
+  --tl-size:3rem; --tl-radius:var(--radius-marker); --tl-border:var(--amber-fill);
+  --tl-bg:var(--paper); --tl-fg:var(--amber); --tl-connector:var(--border);
+
+  /* media frame */
+  --frame-radius:var(--radius-surface); --frame-border:1px dashed var(--border);
+  --photo-border:1px solid var(--border); --photo-bg:var(--ink-3);
+  --caption-fg:var(--on-ink); --caption-scrim:linear-gradient(to top, rgba(20,17,28,.78), transparent);
+
+  /* form panel */
+  --form-bg:var(--ink-3); --form-border:rgba(243,238,230,.14); --form-radius:var(--radius-panel);
+  --field-bg:var(--ink-3); --field-border:rgba(243,238,230,.2); --field-radius:var(--radius-control);
+  --field-fg:var(--on-ink); --field-placeholder:var(--on-ink-muted-2);
+  --label-color:var(--on-ink-muted-2); --label-size:var(--fs-label);
+
+  /* faq */
+  --faq-divider:var(--border); --faq-summary-size:var(--fs-body); --faq-chevron-color:var(--amber);
+  --faq-answer-color:var(--muted); --faq-answer-max-width:64ch;
+}
